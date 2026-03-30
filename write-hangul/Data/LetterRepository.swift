@@ -1,0 +1,101 @@
+import CoreGraphics
+import Foundation
+
+struct LetterRepository {
+    let letters: [Letter]
+
+    init() {
+        letters = Self.buildLetters()
+    }
+
+    func letters(in category: LetterCategory) -> [Letter] {
+        letters
+            .filter { $0.category == category }
+            .sorted { $0.orderIndex < $1.orderIndex }
+    }
+
+    func letter(id: String) -> Letter? {
+        letters.first(where: { $0.id == id })
+    }
+
+    func adjacentLetter(to letter: Letter, direction: NavigationDirection) -> Letter? {
+        let categoryLetters = letters(in: letter.category)
+        guard let index = categoryLetters.firstIndex(of: letter) else { return nil }
+
+        switch direction {
+        case .previous:
+            let previousIndex = categoryLetters.index(before: index)
+            return index > categoryLetters.startIndex ? categoryLetters[previousIndex] : nil
+        case .next:
+            let nextIndex = categoryLetters.index(after: index)
+            return nextIndex < categoryLetters.endIndex ? categoryLetters[nextIndex] : nil
+        }
+    }
+}
+
+enum NavigationDirection {
+    case previous
+    case next
+}
+
+private extension LetterRepository {
+    static func buildLetters() -> [Letter] {
+        let consonants: [(String, String, [CGRect])] = [
+            ("ㄱ", "g/k", [r(0.25, 0.18, 0.12, 0.56), r(0.25, 0.62, 0.46, 0.12)]),
+            ("ㄴ", "n", [r(0.28, 0.18, 0.12, 0.56), r(0.28, 0.62, 0.42, 0.12)]),
+            ("ㄷ", "d/t", [r(0.24, 0.18, 0.12, 0.56), r(0.24, 0.18, 0.46, 0.12), r(0.24, 0.62, 0.46, 0.12)]),
+            ("ㄹ", "r/l", [r(0.24, 0.18, 0.46, 0.12), r(0.24, 0.18, 0.12, 0.25), r(0.24, 0.40, 0.38, 0.12), r(0.50, 0.40, 0.12, 0.22), r(0.24, 0.62, 0.46, 0.12)]),
+            ("ㅁ", "m", [r(0.24, 0.20, 0.46, 0.12), r(0.24, 0.20, 0.12, 0.46), r(0.58, 0.20, 0.12, 0.46), r(0.24, 0.54, 0.46, 0.12)]),
+            ("ㅂ", "b/p", [r(0.24, 0.18, 0.46, 0.12), r(0.24, 0.18, 0.12, 0.56), r(0.58, 0.18, 0.12, 0.56), r(0.24, 0.40, 0.46, 0.12), r(0.24, 0.62, 0.46, 0.12)]),
+            ("ㅅ", "s", [r(0.27, 0.24, 0.14, 0.36), r(0.57, 0.24, 0.14, 0.36), r(0.41, 0.52, 0.14, 0.18)]),
+            ("ㅇ", "ng", [r(0.28, 0.26, 0.44, 0.44)]),
+            ("ㅈ", "j", [r(0.25, 0.20, 0.48, 0.12), r(0.30, 0.30, 0.14, 0.32), r(0.56, 0.30, 0.14, 0.32), r(0.43, 0.54, 0.14, 0.18)]),
+            ("ㅊ", "ch", [r(0.37, 0.12, 0.24, 0.10), r(0.25, 0.24, 0.48, 0.12), r(0.30, 0.34, 0.14, 0.32), r(0.56, 0.34, 0.14, 0.32), r(0.43, 0.58, 0.14, 0.16)]),
+            ("ㅋ", "k", [r(0.24, 0.18, 0.12, 0.56), r(0.24, 0.18, 0.46, 0.12), r(0.32, 0.42, 0.32, 0.12), r(0.24, 0.62, 0.46, 0.12)]),
+            ("ㅌ", "t", [r(0.24, 0.18, 0.46, 0.12), r(0.32, 0.32, 0.30, 0.12), r(0.24, 0.18, 0.12, 0.56), r(0.58, 0.18, 0.12, 0.56), r(0.24, 0.62, 0.46, 0.12)]),
+            ("ㅍ", "p", [r(0.24, 0.18, 0.46, 0.12), r(0.24, 0.18, 0.12, 0.56), r(0.58, 0.18, 0.12, 0.56), r(0.24, 0.40, 0.46, 0.12), r(0.24, 0.62, 0.46, 0.12), r(0.40, 0.74, 0.14, 0.08)]),
+            ("ㅎ", "h", [r(0.37, 0.18, 0.20, 0.10), r(0.28, 0.34, 0.44, 0.34), r(0.24, 0.50, 0.52, 0.10)])
+        ]
+
+        let vowels: [(String, String, [CGRect])] = [
+            ("ㅏ", "a", [r(0.44, 0.16, 0.12, 0.60), r(0.52, 0.38, 0.22, 0.12)]),
+            ("ㅑ", "ya", [r(0.44, 0.16, 0.12, 0.60), r(0.52, 0.30, 0.22, 0.12), r(0.52, 0.50, 0.22, 0.12)]),
+            ("ㅓ", "eo", [r(0.44, 0.16, 0.12, 0.60), r(0.26, 0.38, 0.22, 0.12)]),
+            ("ㅕ", "yeo", [r(0.44, 0.16, 0.12, 0.60), r(0.26, 0.30, 0.22, 0.12), r(0.26, 0.50, 0.22, 0.12)]),
+            ("ㅗ", "o", [r(0.22, 0.34, 0.56, 0.12), r(0.44, 0.16, 0.12, 0.22)]),
+            ("ㅛ", "yo", [r(0.22, 0.38, 0.56, 0.12), r(0.34, 0.16, 0.12, 0.18), r(0.54, 0.16, 0.12, 0.18)]),
+            ("ㅜ", "u", [r(0.22, 0.46, 0.56, 0.12), r(0.44, 0.58, 0.12, 0.22)]),
+            ("ㅠ", "yu", [r(0.22, 0.42, 0.56, 0.12), r(0.34, 0.54, 0.12, 0.18), r(0.54, 0.54, 0.12, 0.18)]),
+            ("ㅡ", "eu", [r(0.18, 0.42, 0.64, 0.12)]),
+            ("ㅣ", "i", [r(0.44, 0.16, 0.12, 0.60)])
+        ]
+
+        let consonantLetters = consonants.enumerated().map { index, item in
+            Letter(
+                id: "consonant-\(index)",
+                symbol: item.0,
+                romanization: item.1,
+                category: .consonant,
+                orderIndex: index,
+                guideTemplate: .from(item.2)
+            )
+        }
+
+        let vowelLetters = vowels.enumerated().map { index, item in
+            Letter(
+                id: "vowel-\(index)",
+                symbol: item.0,
+                romanization: item.1,
+                category: .vowel,
+                orderIndex: index,
+                guideTemplate: .from(item.2)
+            )
+        }
+
+        return consonantLetters + vowelLetters
+    }
+
+    static func r(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
+        CGRect(x: x, y: y, width: width, height: height)
+    }
+}

@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A00000000000000000000001 /* WriteHangulApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000001 /* WriteHangulApp.swift */; };
+		A00000000000000000000002 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000002 /* AppContainer.swift */; };
+		A00000000000000000000003 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000003 /* Letter.swift */; };
+		A00000000000000000000004 /* PracticeProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000004 /* PracticeProgress.swift */; };
+		A00000000000000000000005 /* LetterGuideTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000005 /* LetterGuideTemplate.swift */; };
+		A00000000000000000000006 /* LetterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000006 /* LetterRepository.swift */; };
+		A00000000000000000000007 /* ProgressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000007 /* ProgressStore.swift */; };
+		A00000000000000000000008 /* PracticeEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000008 /* PracticeEvaluation.swift */; };
+		A00000000000000000000009 /* ScoringEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000009 /* ScoringEngine.swift */; };
+		A0000000000000000000000A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000000A /* HomeView.swift */; };
+		A0000000000000000000000B /* LetterSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000000B /* LetterSectionView.swift */; };
+		A0000000000000000000000C /* LetterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000000C /* LetterCellView.swift */; };
+		A0000000000000000000000D /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000000D /* PracticeView.swift */; };
+		A0000000000000000000000E /* PracticeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000000E /* PracticeHeaderView.swift */; };
+		A0000000000000000000000F /* PracticeControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000000F /* PracticeControlsView.swift */; };
+		A00000000000000000000010 /* FeedbackBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000010 /* FeedbackBannerView.swift */; };
+		A00000000000000000000011 /* TracingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000011 /* TracingCanvasView.swift */; };
+		A00000000000000000000012 /* GuideOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000012 /* GuideOverlayView.swift */; };
+		A00000000000000000000013 /* Color+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000013 /* Color+App.swift */; };
+		A00000000000000000000014 /* LetterRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000014 /* LetterRepositoryTests.swift */; };
+		A00000000000000000000015 /* ProgressStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000015 /* ProgressStoreTests.swift */; };
+		A00000000000000000000016 /* ScoringEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000016 /* ScoringEngineTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A40000000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A30000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A50000000000000000000001;
+			remoteInfo = write-hangul;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A10000000000000000000001 /* WriteHangulApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteHangulApp.swift; sourceTree = "<group>"; };
+		A10000000000000000000002 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		A10000000000000000000003 /* Letter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
+		A10000000000000000000004 /* PracticeProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeProgress.swift; sourceTree = "<group>"; };
+		A10000000000000000000005 /* LetterGuideTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGuideTemplate.swift; sourceTree = "<group>"; };
+		A10000000000000000000006 /* LetterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterRepository.swift; sourceTree = "<group>"; };
+		A10000000000000000000007 /* ProgressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStore.swift; sourceTree = "<group>"; };
+		A10000000000000000000008 /* PracticeEvaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeEvaluation.swift; sourceTree = "<group>"; };
+		A10000000000000000000009 /* ScoringEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringEngine.swift; sourceTree = "<group>"; };
+		A1000000000000000000000A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A1000000000000000000000B /* LetterSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterSectionView.swift; sourceTree = "<group>"; };
+		A1000000000000000000000C /* LetterCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCellView.swift; sourceTree = "<group>"; };
+		A1000000000000000000000D /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
+		A1000000000000000000000E /* PracticeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeHeaderView.swift; sourceTree = "<group>"; };
+		A1000000000000000000000F /* PracticeControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeControlsView.swift; sourceTree = "<group>"; };
+		A10000000000000000000010 /* FeedbackBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackBannerView.swift; sourceTree = "<group>"; };
+		A10000000000000000000011 /* TracingCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingCanvasView.swift; sourceTree = "<group>"; };
+		A10000000000000000000012 /* GuideOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideOverlayView.swift; sourceTree = "<group>"; };
+		A10000000000000000000013 /* Color+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+App.swift"; sourceTree = "<group>"; };
+		A10000000000000000000014 /* LetterRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterRepositoryTests.swift; sourceTree = "<group>"; };
+		A10000000000000000000015 /* ProgressStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStoreTests.swift; sourceTree = "<group>"; };
+		A10000000000000000000016 /* ScoringEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringEngineTests.swift; sourceTree = "<group>"; };
+		A10000000000000000000017 /* write-hangul.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "write-hangul.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000000000000000000018 /* write-hangulTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "write-hangulTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A60000000000000000000001 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A60000000000000000000002 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A20000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000002 /* write-hangul */,
+				A20000000000000000000003 /* write-hangulTests */,
+				A20000000000000000000004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A20000000000000000000002 /* write-hangul */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000005 /* App */,
+				A20000000000000000000006 /* Models */,
+				A20000000000000000000007 /* Data */,
+				A20000000000000000000008 /* Stores */,
+				A20000000000000000000009 /* Scoring */,
+				A2000000000000000000000A /* Views */,
+				A2000000000000000000000B /* Extensions */,
+			);
+			path = "write-hangul";
+			sourceTree = "<group>";
+		};
+		A20000000000000000000003 /* write-hangulTests */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000014 /* LetterRepositoryTests.swift */,
+				A10000000000000000000015 /* ProgressStoreTests.swift */,
+				A10000000000000000000016 /* ScoringEngineTests.swift */,
+			);
+			path = "write-hangulTests";
+			sourceTree = "<group>";
+		};
+		A20000000000000000000004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000017 /* write-hangul.app */,
+				A10000000000000000000018 /* write-hangulTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A20000000000000000000005 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000001 /* WriteHangulApp.swift */,
+				A10000000000000000000002 /* AppContainer.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A20000000000000000000006 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000003 /* Letter.swift */,
+				A10000000000000000000004 /* PracticeProgress.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A20000000000000000000007 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000005 /* LetterGuideTemplate.swift */,
+				A10000000000000000000006 /* LetterRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A20000000000000000000008 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000007 /* ProgressStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		A20000000000000000000009 /* Scoring */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000008 /* PracticeEvaluation.swift */,
+				A10000000000000000000009 /* ScoringEngine.swift */,
+			);
+			path = Scoring;
+			sourceTree = "<group>";
+		};
+		A2000000000000000000000A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2000000000000000000000C /* Home */,
+				A2000000000000000000000D /* Practice */,
+				A2000000000000000000000E /* Shared */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A2000000000000000000000B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000013 /* Color+App.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A2000000000000000000000C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A1000000000000000000000A /* HomeView.swift */,
+				A1000000000000000000000B /* LetterSectionView.swift */,
+				A1000000000000000000000C /* LetterCellView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A2000000000000000000000D /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				A1000000000000000000000D /* PracticeView.swift */,
+				A1000000000000000000000E /* PracticeHeaderView.swift */,
+				A1000000000000000000000F /* PracticeControlsView.swift */,
+				A10000000000000000000010 /* FeedbackBannerView.swift */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
+		A2000000000000000000000E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000011 /* TracingCanvasView.swift */,
+				A10000000000000000000012 /* GuideOverlayView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A50000000000000000000001 /* write-hangul */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A70000000000000000000001 /* Build configuration list for PBXNativeTarget "write-hangul" */;
+			buildPhases = (
+				A80000000000000000000001 /* Sources */,
+				A60000000000000000000001 /* Frameworks */,
+			);
+			buildRules = ();
+			dependencies = ();
+			name = "write-hangul";
+			productName = "write-hangul";
+			productReference = A10000000000000000000017 /* write-hangul.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A50000000000000000000002 /* write-hangulTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A70000000000000000000002 /* Build configuration list for PBXNativeTarget "write-hangulTests" */;
+			buildPhases = (
+				A80000000000000000000002 /* Sources */,
+				A60000000000000000000002 /* Frameworks */,
+			);
+			buildRules = ();
+			dependencies = (
+				A90000000000000000000001 /* PBXTargetDependency */,
+			);
+			name = "write-hangulTests";
+			productName = "write-hangulTests";
+			productReference = A10000000000000000000018 /* write-hangulTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A30000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					A50000000000000000000001 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					A50000000000000000000002 = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = A50000000000000000000001;
+					};
+				};
+			};
+			buildConfigurationList = A70000000000000000000003 /* Build configuration list for PBXProject "write-hangul" */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A20000000000000000000001;
+			productRefGroup = A20000000000000000000004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A50000000000000000000001 /* write-hangul */,
+				A50000000000000000000002 /* write-hangulTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A80000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000000000000000000001 /* WriteHangulApp.swift in Sources */,
+				A00000000000000000000002 /* AppContainer.swift in Sources */,
+				A00000000000000000000003 /* Letter.swift in Sources */,
+				A00000000000000000000004 /* PracticeProgress.swift in Sources */,
+				A00000000000000000000005 /* LetterGuideTemplate.swift in Sources */,
+				A00000000000000000000006 /* LetterRepository.swift in Sources */,
+				A00000000000000000000007 /* ProgressStore.swift in Sources */,
+				A00000000000000000000008 /* PracticeEvaluation.swift in Sources */,
+				A00000000000000000000009 /* ScoringEngine.swift in Sources */,
+				A0000000000000000000000A /* HomeView.swift in Sources */,
+				A0000000000000000000000B /* LetterSectionView.swift in Sources */,
+				A0000000000000000000000C /* LetterCellView.swift in Sources */,
+				A0000000000000000000000D /* PracticeView.swift in Sources */,
+				A0000000000000000000000E /* PracticeHeaderView.swift in Sources */,
+				A0000000000000000000000F /* PracticeControlsView.swift in Sources */,
+				A00000000000000000000010 /* FeedbackBannerView.swift in Sources */,
+				A00000000000000000000011 /* TracingCanvasView.swift in Sources */,
+				A00000000000000000000012 /* GuideOverlayView.swift in Sources */,
+				A00000000000000000000013 /* Color+App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000000000000000000014 /* LetterRepositoryTests.swift in Sources */,
+				A00000000000000000000015 /* ProgressStoreTests.swift in Sources */,
+				A00000000000000000000016 /* ScoringEngineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A90000000000000000000001 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = A50000000000000000000001 /* write-hangul */; targetProxy = A40000000000000000000001 /* PBXContainerItemProxy */; };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AA0000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA0000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		AA0000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paullee.write-hangul";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AA0000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paullee.write-hangul";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		AA0000000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@loader_path/Frameworks",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paullee.write-hangulTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/write-hangul.app/write-hangul";
+			};
+			name = Debug;
+		};
+		AA0000000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@loader_path/Frameworks",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paullee.write-hangulTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/write-hangul.app/write-hangul";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A70000000000000000000001 /* Build configuration list for PBXNativeTarget "write-hangul" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000000000000000000003 /* Debug */,
+				AA0000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A70000000000000000000002 /* Build configuration list for PBXNativeTarget "write-hangulTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000000000000000000005 /* Debug */,
+				AA0000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A70000000000000000000003 /* Build configuration list for PBXProject "write-hangul" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000000000000000000001 /* Debug */,
+				AA0000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A30000000000000000000001 /* Project object */;
+}
