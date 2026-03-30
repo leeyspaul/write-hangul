@@ -1,5 +1,28 @@
 import SwiftUI
 
+struct DemoControlsView: View {
+    let canGoPrevious: Bool
+    let canGoNext: Bool
+    let onPrevious: () -> Void
+    let onNext: () -> Void
+    let onTryIt: () -> Void
+
+    var body: some View {
+        HStack(spacing: 12) {
+            Button("Previous", action: onPrevious)
+                .buttonStyle(SecondaryControlButtonStyle())
+                .disabled(!canGoPrevious)
+
+            Button("Next", action: onNext)
+                .buttonStyle(SecondaryControlButtonStyle())
+                .disabled(!canGoNext)
+
+            Button("Try it", action: onTryIt)
+                .buttonStyle(PrimaryControlButtonStyle())
+        }
+    }
+}
+
 struct PracticeControlsView: View {
     let canGoPrevious: Bool
     let canGoNext: Bool

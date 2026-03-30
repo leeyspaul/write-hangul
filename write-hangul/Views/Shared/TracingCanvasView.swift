@@ -2,6 +2,8 @@ import PencilKit
 import SwiftUI
 
 struct TracingCanvasView: UIViewRepresentable {
+    private static let inkColor = UIColor(red: 0.07, green: 0.08, blue: 0.09, alpha: 1)
+
     @Binding var drawing: PKDrawing
     let clearTrigger: Int
     @Binding var canvasSize: CGSize
@@ -15,15 +17,19 @@ struct TracingCanvasView: UIViewRepresentable {
         canvasView.delegate = context.coordinator
         canvasView.backgroundColor = .clear
         canvasView.isOpaque = false
+        canvasView.overrideUserInterfaceStyle = .light
         canvasView.drawingPolicy = .anyInput
         canvasView.alwaysBounceVertical = false
         canvasView.alwaysBounceHorizontal = false
-        canvasView.tool = PKInkingTool(.pen, color: .black, width: 14)
+        canvasView.tool = PKInkingTool(.pen, color: Self.inkColor, width: 14)
         canvasView.drawing = drawing
         return canvasView
     }
 
     func updateUIView(_ uiView: PKCanvasView, context: Context) {
+        uiView.overrideUserInterfaceStyle = .light
+        uiView.tool = PKInkingTool(.pen, color: Self.inkColor, width: 14)
+
         if uiView.drawing != drawing {
             uiView.drawing = drawing
         }
