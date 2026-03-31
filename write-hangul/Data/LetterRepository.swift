@@ -40,34 +40,117 @@ enum NavigationDirection {
 
 private extension LetterRepository {
     static func buildLetters() -> [Letter] {
-        let consonants: [(String, String, [GuideRegion.Specification])] = [
-            ("ㄱ", "g/k", [rr(0.25, 0.18, 0.12, 0.56), rr(0.25, 0.62, 0.46, 0.12)]),
-            ("ㄴ", "n", [rr(0.28, 0.18, 0.12, 0.56), rr(0.28, 0.62, 0.42, 0.12)]),
-            ("ㄷ", "d/t", [rr(0.24, 0.18, 0.12, 0.56), rr(0.24, 0.18, 0.46, 0.12), rr(0.24, 0.62, 0.46, 0.12)]),
-            ("ㄹ", "r/l", [rr(0.24, 0.18, 0.46, 0.12), rr(0.24, 0.18, 0.12, 0.25), rr(0.24, 0.40, 0.38, 0.12), rr(0.50, 0.40, 0.12, 0.22), rr(0.24, 0.62, 0.46, 0.12)]),
-            ("ㅁ", "m", [rr(0.24, 0.20, 0.46, 0.12), rr(0.24, 0.20, 0.12, 0.46), rr(0.58, 0.20, 0.12, 0.46), rr(0.24, 0.54, 0.46, 0.12)]),
-            ("ㅂ", "b/p", [rr(0.24, 0.18, 0.46, 0.12), rr(0.24, 0.18, 0.12, 0.56), rr(0.58, 0.18, 0.12, 0.56), rr(0.24, 0.40, 0.46, 0.12), rr(0.24, 0.62, 0.46, 0.12)]),
-            ("ㅅ", "s", [rr(0.27, 0.24, 0.14, 0.36), rr(0.57, 0.24, 0.14, 0.36), rr(0.41, 0.52, 0.14, 0.18)]),
-            ("ㅇ", "ng", [ellipse(0.28, 0.26, 0.44, 0.44)]),
-            ("ㅈ", "j", [rr(0.25, 0.20, 0.48, 0.12), rr(0.30, 0.30, 0.14, 0.32), rr(0.56, 0.30, 0.14, 0.32), rr(0.43, 0.54, 0.14, 0.18)]),
-            ("ㅊ", "ch", [rr(0.37, 0.12, 0.24, 0.10), rr(0.25, 0.24, 0.48, 0.12), rr(0.30, 0.34, 0.14, 0.32), rr(0.56, 0.34, 0.14, 0.32), rr(0.43, 0.58, 0.14, 0.16)]),
-            ("ㅋ", "k", [rr(0.24, 0.18, 0.12, 0.56), rr(0.24, 0.18, 0.46, 0.12), rr(0.32, 0.42, 0.32, 0.12), rr(0.24, 0.62, 0.46, 0.12)]),
-            ("ㅌ", "t", [rr(0.24, 0.18, 0.46, 0.12), rr(0.32, 0.32, 0.30, 0.12), rr(0.24, 0.18, 0.12, 0.56), rr(0.58, 0.18, 0.12, 0.56), rr(0.24, 0.62, 0.46, 0.12)]),
-            ("ㅍ", "p", [rr(0.24, 0.18, 0.46, 0.12), rr(0.24, 0.18, 0.12, 0.56), rr(0.58, 0.18, 0.12, 0.56), rr(0.24, 0.40, 0.46, 0.12), rr(0.24, 0.62, 0.46, 0.12), rr(0.40, 0.74, 0.14, 0.08)]),
-            ("ㅎ", "h", [rr(0.37, 0.18, 0.20, 0.10), rr(0.28, 0.34, 0.44, 0.34), rr(0.24, 0.50, 0.52, 0.10)])
+        let consonants: [(String, String, [GuideStroke])] = [
+            ("ㄱ", "g/k", [
+                stroke(1, .right, width: 0.12, p(0.28, 0.24), p(0.66, 0.24), p(0.66, 0.68))
+            ]),
+            ("ㄴ", "n", [
+                stroke(1, .down, width: 0.12, p(0.30, 0.22), p(0.30, 0.68), p(0.66, 0.68))
+            ]),
+            ("ㄷ", "d/t", [
+                stroke(1, .right, width: 0.12, p(0.28, 0.24), p(0.66, 0.24), p(0.66, 0.68), p(0.30, 0.68))
+            ]),
+            ("ㄹ", "r/l", [
+                stroke(1, .right, width: 0.12, p(0.28, 0.24), p(0.66, 0.24), p(0.66, 0.42), p(0.38, 0.42), p(0.38, 0.58), p(0.66, 0.58))
+            ]),
+            ("ㅁ", "m", [
+                stroke(1, .right, width: 0.12, p(0.30, 0.24), p(0.66, 0.24), p(0.66, 0.66), p(0.30, 0.66), p(0.30, 0.24))
+            ]),
+            ("ㅂ", "b/p", [
+                stroke(1, .right, width: 0.12, p(0.30, 0.22), p(0.66, 0.22)),
+                stroke(2, .down, width: 0.12, p(0.30, 0.22), p(0.30, 0.68)),
+                stroke(3, .down, width: 0.12, p(0.66, 0.22), p(0.66, 0.68)),
+                stroke(4, .right, width: 0.12, p(0.30, 0.46), p(0.66, 0.46)),
+                stroke(5, .right, width: 0.12, p(0.30, 0.68), p(0.66, 0.68))
+            ]),
+            ("ㅅ", "s", [
+                stroke(1, .downRight, width: 0.11, p(0.38, 0.26), p(0.50, 0.58)),
+                stroke(2, .downLeft, width: 0.11, p(0.62, 0.26), p(0.50, 0.58))
+            ]),
+            ("ㅇ", "ng", [
+                loop(1, rect(0.30, 0.28, 0.40, 0.40), .clockwiseLoop, width: 0.11)
+            ]),
+            ("ㅈ", "j", [
+                stroke(1, .right, width: 0.10, p(0.28, 0.22), p(0.72, 0.22)),
+                stroke(2, .downRight, width: 0.11, p(0.38, 0.34), p(0.50, 0.60)),
+                stroke(3, .downLeft, width: 0.11, p(0.62, 0.34), p(0.50, 0.60))
+            ]),
+            ("ㅊ", "ch", [
+                stroke(1, .right, width: 0.09, p(0.40, 0.14), p(0.60, 0.14)),
+                stroke(2, .right, width: 0.10, p(0.28, 0.26), p(0.72, 0.26)),
+                stroke(3, .downRight, width: 0.11, p(0.38, 0.38), p(0.50, 0.62)),
+                stroke(4, .downLeft, width: 0.11, p(0.62, 0.38), p(0.50, 0.62))
+            ]),
+            ("ㅋ", "k", [
+                stroke(1, .right, width: 0.12, p(0.28, 0.22), p(0.66, 0.22), p(0.66, 0.66)),
+                stroke(2, .right, width: 0.10, p(0.38, 0.46), p(0.62, 0.46)),
+                stroke(3, .right, width: 0.12, p(0.30, 0.68), p(0.66, 0.68))
+            ]),
+            ("ㅌ", "t", [
+                stroke(1, .right, width: 0.10, p(0.28, 0.22), p(0.72, 0.22)),
+                stroke(2, .right, width: 0.10, p(0.36, 0.38), p(0.64, 0.38)),
+                stroke(3, .down, width: 0.12, p(0.30, 0.22), p(0.30, 0.68)),
+                stroke(4, .down, width: 0.12, p(0.66, 0.22), p(0.66, 0.68)),
+                stroke(5, .right, width: 0.12, p(0.30, 0.68), p(0.66, 0.68))
+            ]),
+            ("ㅍ", "p", [
+                stroke(1, .right, width: 0.10, p(0.28, 0.22), p(0.72, 0.22)),
+                stroke(2, .down, width: 0.12, p(0.30, 0.22), p(0.30, 0.68)),
+                stroke(3, .down, width: 0.12, p(0.66, 0.22), p(0.66, 0.68)),
+                stroke(4, .right, width: 0.10, p(0.30, 0.44), p(0.66, 0.44)),
+                stroke(5, .right, width: 0.12, p(0.30, 0.68), p(0.66, 0.68)),
+                stroke(6, .right, width: 0.09, p(0.42, 0.80), p(0.54, 0.80))
+            ]),
+            ("ㅎ", "h", [
+                stroke(1, .right, width: 0.09, p(0.40, 0.20), p(0.60, 0.20)),
+                loop(2, rect(0.32, 0.34, 0.36, 0.28), .clockwiseLoop, width: 0.10),
+                stroke(3, .right, width: 0.09, p(0.28, 0.64), p(0.72, 0.64))
+            ])
         ]
 
-        let vowels: [(String, String, [GuideRegion.Specification])] = [
-            ("ㅏ", "a", [rr(0.44, 0.16, 0.12, 0.60), rr(0.52, 0.38, 0.22, 0.12)]),
-            ("ㅑ", "ya", [rr(0.44, 0.16, 0.12, 0.60), rr(0.52, 0.30, 0.22, 0.12), rr(0.52, 0.50, 0.22, 0.12)]),
-            ("ㅓ", "eo", [rr(0.44, 0.16, 0.12, 0.60), rr(0.26, 0.38, 0.22, 0.12)]),
-            ("ㅕ", "yeo", [rr(0.44, 0.16, 0.12, 0.60), rr(0.26, 0.30, 0.22, 0.12), rr(0.26, 0.50, 0.22, 0.12)]),
-            ("ㅗ", "o", [rr(0.22, 0.34, 0.56, 0.12), rr(0.44, 0.16, 0.12, 0.22)]),
-            ("ㅛ", "yo", [rr(0.22, 0.38, 0.56, 0.12), rr(0.34, 0.16, 0.12, 0.18), rr(0.54, 0.16, 0.12, 0.18)]),
-            ("ㅜ", "u", [rr(0.22, 0.46, 0.56, 0.12), rr(0.44, 0.58, 0.12, 0.22)]),
-            ("ㅠ", "yu", [rr(0.22, 0.42, 0.56, 0.12), rr(0.34, 0.54, 0.12, 0.18), rr(0.54, 0.54, 0.12, 0.18)]),
-            ("ㅡ", "eu", [rr(0.18, 0.42, 0.64, 0.12)]),
-            ("ㅣ", "i", [rr(0.44, 0.16, 0.12, 0.60)])
+        let vowels: [(String, String, [GuideStroke])] = [
+            ("ㅏ", "a", [
+                stroke(1, .down, width: 0.12, p(0.48, 0.16), p(0.48, 0.78)),
+                stroke(2, .right, width: 0.10, p(0.48, 0.44), p(0.70, 0.44))
+            ]),
+            ("ㅑ", "ya", [
+                stroke(1, .down, width: 0.12, p(0.48, 0.16), p(0.48, 0.78)),
+                stroke(2, .right, width: 0.10, p(0.48, 0.34), p(0.70, 0.34)),
+                stroke(3, .right, width: 0.10, p(0.48, 0.56), p(0.70, 0.56))
+            ]),
+            ("ㅓ", "eo", [
+                stroke(1, .down, width: 0.12, p(0.52, 0.16), p(0.52, 0.78)),
+                stroke(2, .left, width: 0.10, p(0.52, 0.44), p(0.30, 0.44))
+            ]),
+            ("ㅕ", "yeo", [
+                stroke(1, .down, width: 0.12, p(0.52, 0.16), p(0.52, 0.78)),
+                stroke(2, .left, width: 0.10, p(0.52, 0.34), p(0.30, 0.34)),
+                stroke(3, .left, width: 0.10, p(0.52, 0.56), p(0.30, 0.56))
+            ]),
+            ("ㅗ", "o", [
+                stroke(1, .down, width: 0.10, p(0.50, 0.18), p(0.50, 0.36)),
+                stroke(2, .right, width: 0.12, p(0.24, 0.44), p(0.76, 0.44))
+            ]),
+            ("ㅛ", "yo", [
+                stroke(1, .down, width: 0.10, p(0.38, 0.18), p(0.38, 0.34)),
+                stroke(2, .down, width: 0.10, p(0.62, 0.18), p(0.62, 0.34)),
+                stroke(3, .right, width: 0.12, p(0.24, 0.46), p(0.76, 0.46))
+            ]),
+            ("ㅜ", "u", [
+                stroke(1, .right, width: 0.12, p(0.24, 0.44), p(0.76, 0.44)),
+                stroke(2, .down, width: 0.10, p(0.50, 0.52), p(0.50, 0.72))
+            ]),
+            ("ㅠ", "yu", [
+                stroke(1, .right, width: 0.12, p(0.24, 0.40), p(0.76, 0.40)),
+                stroke(2, .down, width: 0.10, p(0.38, 0.48), p(0.38, 0.66)),
+                stroke(3, .down, width: 0.10, p(0.62, 0.48), p(0.62, 0.66))
+            ]),
+            ("ㅡ", "eu", [
+                stroke(1, .right, width: 0.12, p(0.20, 0.50), p(0.80, 0.50))
+            ]),
+            ("ㅣ", "i", [
+                stroke(1, .down, width: 0.12, p(0.50, 0.16), p(0.50, 0.80))
+            ])
         ]
 
         let consonantLetters = consonants.enumerated().map { index, item in
@@ -95,11 +178,39 @@ private extension LetterRepository {
         return consonantLetters + vowelLetters
     }
 
-    static func rr(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> GuideRegion.Specification {
-        GuideRegion.Specification(shape: .roundedRect, rect: CGRect(x: x, y: y, width: width, height: height))
+    static func stroke(
+        _ order: Int,
+        _ direction: GuideStrokeDirection,
+        width: CGFloat = 0.12,
+        _ points: CGPoint...
+    ) -> GuideStroke {
+        GuideStroke(
+            order: order,
+            path: .polyline(points),
+            directionHint: direction,
+            lineWidth: width
+        )
     }
 
-    static func ellipse(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> GuideRegion.Specification {
-        GuideRegion.Specification(shape: .ellipse, rect: CGRect(x: x, y: y, width: width, height: height))
+    static func loop(
+        _ order: Int,
+        _ rect: CGRect,
+        _ direction: GuideStrokeDirection,
+        width: CGFloat = 0.12
+    ) -> GuideStroke {
+        GuideStroke(
+            order: order,
+            path: .ellipse(rect: rect, startAngle: -.pi / 2, endAngle: (.pi * 3) / 2, clockwise: direction == .clockwiseLoop),
+            directionHint: direction,
+            lineWidth: width
+        )
+    }
+
+    static func p(_ x: CGFloat, _ y: CGFloat) -> CGPoint {
+        CGPoint(x: x, y: y)
+    }
+
+    static func rect(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
+        CGRect(x: x, y: y, width: width, height: height)
     }
 }

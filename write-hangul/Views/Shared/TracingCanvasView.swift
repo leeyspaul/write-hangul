@@ -11,7 +11,7 @@ struct TracingCanvasView: UIViewRepresentable {
     }
 
     func makeUIView(context: Context) -> PKCanvasView {
-        let canvasView = PKCanvasView()
+        let canvasView = MeasuringCanvasView()
         canvasView.delegate = context.coordinator
         canvasView.backgroundColor = .clear
         canvasView.isOpaque = false
@@ -20,6 +20,9 @@ struct TracingCanvasView: UIViewRepresentable {
         canvasView.alwaysBounceHorizontal = false
         canvasView.tool = PKInkingTool(.pen, color: .black, width: 14)
         canvasView.drawing = drawing
+        canvasView.onBoundsChange = { size in
+            context.coordinator.updateCanvasSize(size)
+        }
         return canvasView
     }
 
@@ -30,12 +33,7 @@ struct TracingCanvasView: UIViewRepresentable {
 
         if context.coordinator.lastClearTrigger != clearTrigger {
             uiView.drawing = PKDrawing()
-            drawing = uiView.drawing
             context.coordinator.lastClearTrigger = clearTrigger
-        }
-
-        DispatchQueue.main.async {
-            canvasSize = uiView.bounds.size
         }
     }
 
@@ -52,7 +50,21 @@ struct TracingCanvasView: UIViewRepresentable {
 
         func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
             drawing = canvasView.drawing
-            canvasSize = canvasView.bounds.size
+            updateCanvasSize(canvasView.bounds.size)
         }
+
+        func updateCanvasSize(_ size: CGSize) {
+            guard canvasSize != size else { return }
+            canvasSize = size
+        }
+    }
+}
+
+private final class MeasuringCanvasView: PKCanvasView {
+    var onBoundsChange: ((CGSize) -> Void)?
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        onBoundsChange?(bounds.size)
     }
 }
