@@ -32,9 +32,14 @@ struct PracticeView: View {
 
                     VStack(spacing: 18) {
                         ZStack {
-                            Text(letter.symbol)
-                                .font(.system(size: 230, weight: .regular, design: .rounded))
-                                .foregroundStyle(Color.appAccent.opacity(0.16))
+                            if letter.symbol == "ㅇ" {
+                                GuideOverlayView(template: letter.guideTemplate)
+                                    .padding(18)
+                            } else {
+                                Text(letter.symbol)
+                                    .font(.system(size: 230, weight: .regular, design: .rounded))
+                                    .foregroundStyle(Color.appAccent.opacity(0.16))
+                            }
 
                             TracingCanvasView(
                                 drawing: $drawing,

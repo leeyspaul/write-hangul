@@ -18,4 +18,19 @@ final class LetterRepositoryTests: XCTestCase {
         XCTAssertEqual(repository.adjacentLetter(to: consonants[13], direction: .previous)?.symbol, "ㅍ")
         XCTAssertNil(repository.adjacentLetter(to: consonants[13], direction: .next))
     }
+
+    func testIeungUsesEllipseGuideRegion() {
+        let repository = LetterRepository()
+        let ieung = repository.letters(in: .consonant).first { $0.symbol == "ㅇ" }
+
+        XCTAssertEqual(ieung?.guideTemplate.regions.count, 1)
+        XCTAssertEqual(ieung?.guideTemplate.regions.first?.shape, .ellipse)
+    }
+
+    func testNonCircularGuidesStayRoundedRectByDefault() {
+        let repository = LetterRepository()
+        let giyeok = repository.letters(in: .consonant).first { $0.symbol == "ㄱ" }
+
+        XCTAssertEqual(giyeok?.guideTemplate.regions.map(\.shape), [.roundedRect, .roundedRect])
+    }
 }
