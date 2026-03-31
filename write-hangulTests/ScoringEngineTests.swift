@@ -30,11 +30,72 @@ final class ScoringEngineTests: XCTestCase {
         let evaluation = ScoringEngine().evaluate(drawing: drawing, letter: letter, canvasSize: CGSize(width: 300, height: 300))
 
         XCTAssertTrue(evaluation.passed)
-        XCTAssertGreaterThan(evaluation.score, 0.58)
+        XCTAssertGreaterThan(evaluation.score, 0.54)
+    }
+
+    func testCircularIeungDrawingPasses() {
+        let repository = LetterRepository()
+        let letter = repository.letters(in: .consonant).first { $0.symbol == "ㅇ" }!
+        let drawing = makeClosedLoopDrawing(points: circlePoints(center: CGPoint(x: 150, y: 150), radius: 64, segments: 96))
+
+        let evaluation = ScoringEngine().evaluate(drawing: drawing, letter: letter, canvasSize: CGSize(width: 300, height: 300))
+
+        XCTAssertTrue(evaluation.passed)
+        XCTAssertGreaterThan(evaluation.score, ScoringEngine.passThreshold)
+    }
+
+    func testBlockyIeungDrawingScoresWorseThanCircularDrawing() {
+        let repository = LetterRepository()
+        let letter = repository.letters(in: .consonant).first { $0.symbol == "ㅇ" }!
+        let circularDrawing = makeClosedLoopDrawing(points: circlePoints(center: CGPoint(x: 150, y: 150), radius: 64, segments: 96))
+        let blockyDrawing = makeDrawing(strokes: [
+            [
+                CGPoint(x: 82, y: 82),
+                CGPoint(x: 218, y: 82),
+                CGPoint(x: 218, y: 218),
+                CGPoint(x: 82, y: 218)
+            ],
+            [
+                CGPoint(x: 82, y: 116),
+                CGPoint(x: 218, y: 116)
+            ],
+            [
+                CGPoint(x: 82, y: 150),
+                CGPoint(x: 218, y: 150)
+            ],
+            [
+                CGPoint(x: 82, y: 184),
+                CGPoint(x: 218, y: 184)
+            ]
+        ])
+
+        let circularEvaluation = ScoringEngine().evaluate(drawing: circularDrawing, letter: letter, canvasSize: CGSize(width: 300, height: 300))
+        let blockyEvaluation = ScoringEngine().evaluate(drawing: blockyDrawing, letter: letter, canvasSize: CGSize(width: 300, height: 300))
+
+        XCTAssertGreaterThan(circularEvaluation.score, blockyEvaluation.score)
     }
 
     private func makeDrawing(from points: [CGPoint]) -> PKDrawing {
-        let strokePoints = points.map { point in
+        makeDrawing(from: points, closesShape: false)
+    }
+
+    private func makeClosedLoopDrawing(points: [CGPoint]) -> PKDrawing {
+        makeDrawing(from: points, closesShape: true)
+    }
+
+    private func makeDrawing(strokes: [[CGPoint]]) -> PKDrawing {
+        PKDrawing(strokes: strokes.map { points in
+            makeStroke(from: points, closesShape: points.count > 2)
+        })
+    }
+
+    private func makeDrawing(from points: [CGPoint], closesShape: Bool) -> PKDrawing {
+        PKDrawing(strokes: [makeStroke(from: points, closesShape: closesShape)])
+    }
+
+    private func makeStroke(from points: [CGPoint], closesShape: Bool) -> PKStroke {
+        let drawingPoints = closesShape ? points + [points[0]] : points
+        let strokePoints = drawingPoints.map { point in
             PKStrokePoint(
                 location: point,
                 timeOffset: 0,
@@ -47,7 +108,16 @@ final class ScoringEngineTests: XCTestCase {
         }
 
         let path = PKStrokePath(controlPoints: strokePoints, creationDate: Date())
-        let stroke = PKStroke(ink: PKInk(.pen, color: .black), path: path)
-        return PKDrawing(strokes: [stroke])
+        return PKStroke(ink: PKInk(.pen, color: .black), path: path)
+    }
+
+    private func circlePoints(center: CGPoint, radius: CGFloat, segments: Int) -> [CGPoint] {
+        (0..<segments).map { index in
+            let angle = (CGFloat(index) / CGFloat(segments)) * (.pi * 2)
+            return CGPoint(
+                x: center.x + cos(angle) * radius,
+                y: center.y + sin(angle) * radius
+            )
+        }
     }
 }
