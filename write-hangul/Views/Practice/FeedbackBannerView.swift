@@ -5,7 +5,7 @@ struct FeedbackBannerView: View {
 
     var body: some View {
         HStack(spacing: 14) {
-            Image(systemName: evaluation.passed ? "hand.thumbsup.fill" : "pencil.tip.crop.circle.badge.xmark")
+            Image(systemName: evaluation.passed ? "hand.thumbsup.fill" : "xmark.circle.fill")
                 .font(.system(size: 24))
                 .foregroundStyle(evaluation.passed ? Color.appAccent : Color.appWarning)
 

@@ -76,26 +76,9 @@ struct ScoringEngine {
         rasterizedMask(size: canvasSize) { context in
             context.setFillColor(UIColor.white.cgColor)
 
-            for region in template.regions {
-                let frame = CGRect(
-                    x: region.x * canvasSize.width,
-                    y: region.y * canvasSize.height,
-                    width: region.width * canvasSize.width,
-                    height: region.height * canvasSize.height
-                )
-
-                switch region.shape {
-                case .roundedRect:
-                    let radius = min(frame.width, frame.height) * 0.18
-                    context.addPath(UIBezierPath(roundedRect: frame, cornerRadius: radius).cgPath)
-                    context.fillPath()
-                case .ellipse:
-                    let inset = min(frame.width, frame.height) * 0.12
-                    let ellipseRect = frame.insetBy(dx: inset / 2, dy: inset / 2)
-                    context.setStrokeColor(UIColor.white.cgColor)
-                    context.setLineWidth(inset)
-                    context.strokeEllipse(in: ellipseRect)
-                }
+            for path in template.strokedPaths(in: canvasSize) {
+                context.addPath(path)
+                context.fillPath()
             }
         }
     }
@@ -113,8 +96,8 @@ struct ScoringEngine {
     }
 
     private func ellipseShapeScore(drawing: PKDrawing, template: LetterGuideTemplate, canvasSize: CGSize) -> CGFloat? {
-        let ellipseRegions = template.regions.filter { $0.shape == .ellipse }
-        guard !ellipseRegions.isEmpty else { return nil }
+        let ellipseStrokes = template.strokes.filter { $0.path.ellipseRect != nil }
+        guard !ellipseStrokes.isEmpty else { return nil }
 
         let drawingMask = drawingMask(for: drawing, canvasSize: canvasSize, outputSize: scoringGridSize)
         guard !drawingMask.isEmpty else { return nil }
@@ -130,8 +113,9 @@ struct ScoringEngine {
                 guard drawingMask[index] > 0 else { continue }
 
                 let point = CGPoint(x: CGFloat(x) + 0.5, y: CGFloat(y) + 0.5)
-                let minimumError = ellipseRegions.reduce(CGFloat.greatestFiniteMagnitude) { best, region in
-                    min(best, ellipseBoundaryError(for: point, region: region, canvasSize: scoringGridSize))
+                let minimumError = ellipseStrokes.reduce(CGFloat.greatestFiniteMagnitude) { best, stroke in
+                    guard let rect = stroke.path.ellipseRect else { return best }
+                    return min(best, ellipseBoundaryError(for: point, rect: rect, canvasSize: scoringGridSize))
                 }
 
                 totalError += minimumError
@@ -185,22 +169,12 @@ private extension CGRect {
     }
 }
 
-private extension LetterGuideTemplate {
-    var bounds: CGRect {
-        regions
-            .map(\.rect)
-            .reduce(into: CGRect.null) { partialResult, rect in
-                partialResult = partialResult.union(rect)
-            }
-    }
-}
-
-private func ellipseBoundaryError(for point: CGPoint, region: GuideRegion, canvasSize: CGSize) -> CGFloat {
+private func ellipseBoundaryError(for point: CGPoint, rect: CGRect, canvasSize: CGSize) -> CGFloat {
     let frame = CGRect(
-        x: region.x * canvasSize.width,
-        y: region.y * canvasSize.height,
-        width: region.width * canvasSize.width,
-        height: region.height * canvasSize.height
+        x: rect.origin.x * canvasSize.width,
+        y: rect.origin.y * canvasSize.height,
+        width: rect.width * canvasSize.width,
+        height: rect.height * canvasSize.height
     )
 
     let radiusX = max(frame.width / 2, 0.0001)

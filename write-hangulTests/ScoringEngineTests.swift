@@ -30,13 +30,13 @@ final class ScoringEngineTests: XCTestCase {
         let evaluation = ScoringEngine().evaluate(drawing: drawing, letter: letter, canvasSize: CGSize(width: 300, height: 300))
 
         XCTAssertTrue(evaluation.passed)
-        XCTAssertGreaterThan(evaluation.score, 0.54)
+        XCTAssertGreaterThan(evaluation.score, ScoringEngine.passThreshold)
     }
 
     func testCircularIeungDrawingPasses() {
         let repository = LetterRepository()
         let letter = repository.letters(in: .consonant).first { $0.symbol == "ㅇ" }!
-        let drawing = makeClosedLoopDrawing(points: circlePoints(center: CGPoint(x: 150, y: 150), radius: 64, segments: 96))
+        let drawing = makeClosedLoopDrawing(points: circlePoints(center: CGPoint(x: 150, y: 150), radius: 60, segments: 96))
 
         let evaluation = ScoringEngine().evaluate(drawing: drawing, letter: letter, canvasSize: CGSize(width: 300, height: 300))
 
@@ -47,25 +47,25 @@ final class ScoringEngineTests: XCTestCase {
     func testBlockyIeungDrawingScoresWorseThanCircularDrawing() {
         let repository = LetterRepository()
         let letter = repository.letters(in: .consonant).first { $0.symbol == "ㅇ" }!
-        let circularDrawing = makeClosedLoopDrawing(points: circlePoints(center: CGPoint(x: 150, y: 150), radius: 64, segments: 96))
+        let circularDrawing = makeClosedLoopDrawing(points: circlePoints(center: CGPoint(x: 150, y: 150), radius: 60, segments: 96))
         let blockyDrawing = makeDrawing(strokes: [
             [
-                CGPoint(x: 82, y: 82),
-                CGPoint(x: 218, y: 82),
-                CGPoint(x: 218, y: 218),
-                CGPoint(x: 82, y: 218)
+                CGPoint(x: 90, y: 90),
+                CGPoint(x: 210, y: 90),
+                CGPoint(x: 210, y: 210),
+                CGPoint(x: 90, y: 210)
             ],
             [
-                CGPoint(x: 82, y: 116),
-                CGPoint(x: 218, y: 116)
+                CGPoint(x: 90, y: 120),
+                CGPoint(x: 210, y: 120)
             ],
             [
-                CGPoint(x: 82, y: 150),
-                CGPoint(x: 218, y: 150)
+                CGPoint(x: 90, y: 150),
+                CGPoint(x: 210, y: 150)
             ],
             [
-                CGPoint(x: 82, y: 184),
-                CGPoint(x: 218, y: 184)
+                CGPoint(x: 90, y: 180),
+                CGPoint(x: 210, y: 180)
             ]
         ])
 
