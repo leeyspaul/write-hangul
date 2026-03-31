@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-symbol="ㄹ" data-romanization="r/l">
+  <title>ㄹ</title>
+  <desc>Full glyph outline and ordered stroke paths for ㄹ.</desc>
+  <g id="glyph-outline">
+    <path d="M 86 80.784 L 86 72.154 L 23.66 72.154 L 23.66 53.864 L 84.326 53.864 L 84.326 19.216 L 14 19.216 L 14 27.717 L 74.665 27.717 L 74.665 45.234 L 14 45.234 L 14 80.784 Z" fill="#dfe9e3"/>
+  </g>
+  <g id="stroke-paths" fill="none" stroke="#4a916b">
+  <path id="stroke-1" data-order="1" data-direction="right" d="M 66 24 L 30 24 L 30 40 L 58 40" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-2" data-order="2" data-direction="left" d="M 58 52 L 30 52" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-3" data-order="3" data-direction="downRight" d="M 30 52 L 30 68 L 66 68" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

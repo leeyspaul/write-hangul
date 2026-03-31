@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-symbol="ㅂ" data-romanization="b/p">
+  <title>ㅂ</title>
+  <desc>Full glyph outline and ordered stroke paths for ㅂ.</desc>
+  <g id="glyph-outline">
+    <path d="M 76.074 72.103 L 23.926 72.103 L 23.926 50.662 L 76.074 50.662 Z M 86 80.971 L 86 19.029 L 76.074 19.029 L 76.074 41.794 L 23.926 41.794 L 23.926 19.029 L 14 19.029 L 14 80.971 Z" fill="#dfe9e3"/>
+  </g>
+  <g id="stroke-paths" fill="none" stroke="#4a916b">
+  <path id="stroke-1" data-order="1" data-direction="down" d="M 32 22 L 32 70" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-2" data-order="2" data-direction="down" d="M 64 22 L 64 70" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-3" data-order="3" data-direction="right" d="M 32 46 L 64 46" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-4" data-order="4" data-direction="right" d="M 32 70 L 64 70" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

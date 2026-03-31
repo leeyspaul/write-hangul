@@ -1,0 +1,170 @@
+[
+  {
+    "slug": "giyeok",
+    "character": "ㄱ",
+    "category": "consonant",
+    "strokeCount": 2,
+    "file": "giyeok_ㄱ.svg"
+  },
+  {
+    "slug": "nieun",
+    "character": "ㄴ",
+    "category": "consonant",
+    "strokeCount": 2,
+    "file": "nieun_ㄴ.svg"
+  },
+  {
+    "slug": "digeut",
+    "character": "ㄷ",
+    "category": "consonant",
+    "strokeCount": 3,
+    "file": "digeut_ㄷ.svg"
+  },
+  {
+    "slug": "rieul",
+    "character": "ㄹ",
+    "category": "consonant",
+    "strokeCount": 5,
+    "file": "rieul_ㄹ.svg"
+  },
+  {
+    "slug": "mieum",
+    "character": "ㅁ",
+    "category": "consonant",
+    "strokeCount": 4,
+    "file": "mieum_ㅁ.svg"
+  },
+  {
+    "slug": "bieup",
+    "character": "ㅂ",
+    "category": "consonant",
+    "strokeCount": 4,
+    "file": "bieup_ㅂ.svg"
+  },
+  {
+    "slug": "siot",
+    "character": "ㅅ",
+    "category": "consonant",
+    "strokeCount": 2,
+    "file": "siot_ㅅ.svg"
+  },
+  {
+    "slug": "ieung",
+    "character": "ㅇ",
+    "category": "consonant",
+    "strokeCount": 1,
+    "file": "ieung_ㅇ.svg"
+  },
+  {
+    "slug": "jieut",
+    "character": "ㅈ",
+    "category": "consonant",
+    "strokeCount": 3,
+    "file": "jieut_ㅈ.svg"
+  },
+  {
+    "slug": "chieut",
+    "character": "ㅊ",
+    "category": "consonant",
+    "strokeCount": 4,
+    "file": "chieut_ㅊ.svg"
+  },
+  {
+    "slug": "kieuk",
+    "character": "ㅋ",
+    "category": "consonant",
+    "strokeCount": 3,
+    "file": "kieuk_ㅋ.svg"
+  },
+  {
+    "slug": "tieut",
+    "character": "ㅌ",
+    "category": "consonant",
+    "strokeCount": 4,
+    "file": "tieut_ㅌ.svg"
+  },
+  {
+    "slug": "pieup",
+    "character": "ㅍ",
+    "category": "consonant",
+    "strokeCount": 4,
+    "file": "pieup_ㅍ.svg"
+  },
+  {
+    "slug": "hieut",
+    "character": "ㅎ",
+    "category": "consonant",
+    "strokeCount": 3,
+    "file": "hieut_ㅎ.svg"
+  },
+  {
+    "slug": "a",
+    "character": "ㅏ",
+    "category": "vowel",
+    "strokeCount": 2,
+    "file": "a_ㅏ.svg"
+  },
+  {
+    "slug": "ya",
+    "character": "ㅑ",
+    "category": "vowel",
+    "strokeCount": 3,
+    "file": "ya_ㅑ.svg"
+  },
+  {
+    "slug": "eo",
+    "character": "ㅓ",
+    "category": "vowel",
+    "strokeCount": 2,
+    "file": "eo_ㅓ.svg"
+  },
+  {
+    "slug": "yeo",
+    "character": "ㅕ",
+    "category": "vowel",
+    "strokeCount": 3,
+    "file": "yeo_ㅕ.svg"
+  },
+  {
+    "slug": "o",
+    "character": "ㅗ",
+    "category": "vowel",
+    "strokeCount": 2,
+    "file": "o_ㅗ.svg"
+  },
+  {
+    "slug": "yo",
+    "character": "ㅛ",
+    "category": "vowel",
+    "strokeCount": 3,
+    "file": "yo_ㅛ.svg"
+  },
+  {
+    "slug": "u",
+    "character": "ㅜ",
+    "category": "vowel",
+    "strokeCount": 2,
+    "file": "u_ㅜ.svg"
+  },
+  {
+    "slug": "yu",
+    "character": "ㅠ",
+    "category": "vowel",
+    "strokeCount": 3,
+    "file": "yu_ㅠ.svg"
+  },
+  {
+    "slug": "eu",
+    "character": "ㅡ",
+    "category": "vowel",
+    "strokeCount": 1,
+    "file": "eu_ㅡ.svg"
+  },
+  {
+    "slug": "i",
+    "character": "ㅣ",
+    "category": "vowel",
+    "strokeCount": 1,
+    "file": "i_ㅣ.svg"
+  }
+]

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-symbol="ㅊ" data-romanization="ch">
+  <title>ㅊ</title>
+  <desc>Full glyph outline and ordered stroke paths for ㅊ.</desc>
+  <g id="glyph-outline">
+    <path d="M 67.14 25.15 L 67.14 17.558 L 32.979 17.558 L 32.979 25.15 Z M 81.137 40.214 L 81.137 32.623 L 18.507 32.623 L 18.507 40.214 L 45.196 40.214 L 45.196 43.773 C 45.196 58.956 29.657 70.58 14 74.969 L 17.914 82.442 C 32.504 78.646 45.077 68.326 50.297 58.6 C 55.397 68.326 67.14 78.171 82.204 81.848 L 86 74.376 C 70.461 70.58 54.804 58.837 54.804 43.298 L 54.804 40.214 Z" fill="#dfe9e3"/>
+  </g>
+  <g id="stroke-paths" fill="none" stroke="#4a916b">
+  <path id="stroke-1" data-order="1" data-direction="right" d="M 42 14 L 58 14" stroke-width="9" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-2" data-order="2" data-direction="right" d="M 28 26 L 72 26" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-3" data-order="3" data-direction="downRight" d="M 40 40 L 50 64" stroke-width="11" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-4" data-order="4" data-direction="upRight" d="M 60 40 L 50 64" stroke-width="11" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-symbol="ㄱ" data-romanization="g/k">
+  <title>ㄱ</title>
+  <desc>Full glyph outline and ordered stroke paths for ㄱ.</desc>
+  <g id="glyph-outline">
+    <path d="M 86 82.364 L 86 17.636 L 14 17.636 L 14 27.188 L 75.45 27.188 L 75.45 82.364 Z" fill="#dfe9e3"/>
+  </g>
+  <g id="stroke-paths" fill="none" stroke="#4a916b">
+  <path id="stroke-1" data-order="1" data-direction="right" d="M 30 22 L 68 22 L 68 68" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

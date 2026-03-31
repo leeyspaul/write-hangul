@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-symbol="ㅑ" data-romanization="ya">
+  <title>ㅑ</title>
+  <desc>Full glyph outline and ordered stroke paths for ㅑ.</desc>
+  <g id="glyph-outline">
+    <path d="M 61.263 61.388 L 61.263 55.715 L 44.827 55.715 L 44.827 42.95 L 61.263 42.95 L 61.263 37.277 L 44.827 37.277 L 44.827 14 L 38.737 14 L 38.737 86 L 44.827 86 L 44.827 61.388 Z" fill="#dfe9e3"/>
+  </g>
+  <g id="stroke-paths" fill="none" stroke="#4a916b">
+  <path id="stroke-1" data-order="1" data-direction="down" d="M 48 16 L 48 78" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-2" data-order="2" data-direction="right" d="M 48 34 L 70 34" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-3" data-order="3" data-direction="right" d="M 48 56 L 70 56" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

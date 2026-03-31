@@ -40,177 +40,145 @@ enum NavigationDirection {
 
 private extension LetterRepository {
     static func buildLetters() -> [Letter] {
-        let consonants: [(String, String, [GuideStroke])] = [
-            ("ㄱ", "g/k", [
-                stroke(1, .right, width: 0.12, p(0.28, 0.24), p(0.66, 0.24), p(0.66, 0.68))
-            ]),
-            ("ㄴ", "n", [
-                stroke(1, .down, width: 0.12, p(0.30, 0.22), p(0.30, 0.68), p(0.66, 0.68))
-            ]),
-            ("ㄷ", "d/t", [
-                stroke(1, .right, width: 0.12, p(0.28, 0.24), p(0.66, 0.24), p(0.66, 0.68), p(0.30, 0.68))
-            ]),
-            ("ㄹ", "r/l", [
-                stroke(1, .right, width: 0.12, p(0.28, 0.24), p(0.66, 0.24), p(0.66, 0.42), p(0.38, 0.42), p(0.38, 0.58), p(0.66, 0.58))
-            ]),
-            ("ㅁ", "m", [
-                stroke(1, .right, width: 0.12, p(0.30, 0.24), p(0.66, 0.24), p(0.66, 0.66), p(0.30, 0.66), p(0.30, 0.24))
-            ]),
-            ("ㅂ", "b/p", [
-                stroke(1, .right, width: 0.12, p(0.30, 0.22), p(0.66, 0.22)),
-                stroke(2, .down, width: 0.12, p(0.30, 0.22), p(0.30, 0.68)),
-                stroke(3, .down, width: 0.12, p(0.66, 0.22), p(0.66, 0.68)),
-                stroke(4, .right, width: 0.12, p(0.30, 0.46), p(0.66, 0.46)),
-                stroke(5, .right, width: 0.12, p(0.30, 0.68), p(0.66, 0.68))
-            ]),
-            ("ㅅ", "s", [
-                stroke(1, .downRight, width: 0.11, p(0.38, 0.26), p(0.50, 0.58)),
-                stroke(2, .downLeft, width: 0.11, p(0.62, 0.26), p(0.50, 0.58))
-            ]),
-            ("ㅇ", "ng", [
-                loop(1, rect(0.30, 0.28, 0.40, 0.40), .clockwiseLoop, width: 0.11)
-            ]),
-            ("ㅈ", "j", [
-                stroke(1, .right, width: 0.10, p(0.28, 0.22), p(0.72, 0.22)),
-                stroke(2, .downRight, width: 0.11, p(0.38, 0.34), p(0.50, 0.60)),
-                stroke(3, .downLeft, width: 0.11, p(0.62, 0.34), p(0.50, 0.60))
-            ]),
-            ("ㅊ", "ch", [
-                stroke(1, .right, width: 0.09, p(0.40, 0.14), p(0.60, 0.14)),
-                stroke(2, .right, width: 0.10, p(0.28, 0.26), p(0.72, 0.26)),
-                stroke(3, .downRight, width: 0.11, p(0.38, 0.38), p(0.50, 0.62)),
-                stroke(4, .downLeft, width: 0.11, p(0.62, 0.38), p(0.50, 0.62))
-            ]),
-            ("ㅋ", "k", [
-                stroke(1, .right, width: 0.12, p(0.28, 0.22), p(0.66, 0.22), p(0.66, 0.66)),
-                stroke(2, .right, width: 0.10, p(0.38, 0.46), p(0.62, 0.46)),
-                stroke(3, .right, width: 0.12, p(0.30, 0.68), p(0.66, 0.68))
-            ]),
-            ("ㅌ", "t", [
-                stroke(1, .right, width: 0.10, p(0.28, 0.22), p(0.72, 0.22)),
-                stroke(2, .right, width: 0.10, p(0.36, 0.38), p(0.64, 0.38)),
-                stroke(3, .down, width: 0.12, p(0.30, 0.22), p(0.30, 0.68)),
-                stroke(4, .down, width: 0.12, p(0.66, 0.22), p(0.66, 0.68)),
-                stroke(5, .right, width: 0.12, p(0.30, 0.68), p(0.66, 0.68))
-            ]),
-            ("ㅍ", "p", [
-                stroke(1, .right, width: 0.10, p(0.28, 0.22), p(0.72, 0.22)),
-                stroke(2, .down, width: 0.12, p(0.30, 0.22), p(0.30, 0.68)),
-                stroke(3, .down, width: 0.12, p(0.66, 0.22), p(0.66, 0.68)),
-                stroke(4, .right, width: 0.10, p(0.30, 0.44), p(0.66, 0.44)),
-                stroke(5, .right, width: 0.12, p(0.30, 0.68), p(0.66, 0.68)),
-                stroke(6, .right, width: 0.09, p(0.42, 0.80), p(0.54, 0.80))
-            ]),
-            ("ㅎ", "h", [
-                stroke(1, .right, width: 0.09, p(0.40, 0.20), p(0.60, 0.20)),
-                loop(2, rect(0.32, 0.34, 0.36, 0.28), .clockwiseLoop, width: 0.10),
-                stroke(3, .right, width: 0.09, p(0.28, 0.64), p(0.72, 0.64))
-            ])
-        ]
+        let assetEntries = HangulGuideAssetCatalog.shared.manifestEntries()
+        guard !assetEntries.isEmpty else {
+            return buildFallbackLetters()
+        }
 
-        let vowels: [(String, String, [GuideStroke])] = [
-            ("ㅏ", "a", [
-                stroke(1, .down, width: 0.12, p(0.48, 0.16), p(0.48, 0.78)),
-                stroke(2, .right, width: 0.10, p(0.48, 0.44), p(0.70, 0.44))
-            ]),
-            ("ㅑ", "ya", [
-                stroke(1, .down, width: 0.12, p(0.48, 0.16), p(0.48, 0.78)),
-                stroke(2, .right, width: 0.10, p(0.48, 0.34), p(0.70, 0.34)),
-                stroke(3, .right, width: 0.10, p(0.48, 0.56), p(0.70, 0.56))
-            ]),
-            ("ㅓ", "eo", [
-                stroke(1, .down, width: 0.12, p(0.52, 0.16), p(0.52, 0.78)),
-                stroke(2, .left, width: 0.10, p(0.52, 0.44), p(0.30, 0.44))
-            ]),
-            ("ㅕ", "yeo", [
-                stroke(1, .down, width: 0.12, p(0.52, 0.16), p(0.52, 0.78)),
-                stroke(2, .left, width: 0.10, p(0.52, 0.34), p(0.30, 0.34)),
-                stroke(3, .left, width: 0.10, p(0.52, 0.56), p(0.30, 0.56))
-            ]),
-            ("ㅗ", "o", [
-                stroke(1, .down, width: 0.10, p(0.50, 0.18), p(0.50, 0.36)),
-                stroke(2, .right, width: 0.12, p(0.24, 0.44), p(0.76, 0.44))
-            ]),
-            ("ㅛ", "yo", [
-                stroke(1, .down, width: 0.10, p(0.38, 0.18), p(0.38, 0.34)),
-                stroke(2, .down, width: 0.10, p(0.62, 0.18), p(0.62, 0.34)),
-                stroke(3, .right, width: 0.12, p(0.24, 0.46), p(0.76, 0.46))
-            ]),
-            ("ㅜ", "u", [
-                stroke(1, .right, width: 0.12, p(0.24, 0.44), p(0.76, 0.44)),
-                stroke(2, .down, width: 0.10, p(0.50, 0.52), p(0.50, 0.72))
-            ]),
-            ("ㅠ", "yu", [
-                stroke(1, .right, width: 0.12, p(0.24, 0.40), p(0.76, 0.40)),
-                stroke(2, .down, width: 0.10, p(0.38, 0.48), p(0.38, 0.66)),
-                stroke(3, .down, width: 0.10, p(0.62, 0.48), p(0.62, 0.66))
-            ]),
-            ("ㅡ", "eu", [
-                stroke(1, .right, width: 0.12, p(0.20, 0.50), p(0.80, 0.50))
-            ]),
-            ("ㅣ", "i", [
-                stroke(1, .down, width: 0.12, p(0.50, 0.16), p(0.50, 0.80))
-            ])
-        ]
+        return assetEntries.enumerated().compactMap { index, entry in
+            guard let category = LetterCategory(rawValue: entry.category),
+                  let romanization = romanizationBySymbol[entry.character],
+                  let asset = HangulGuideAssetCatalog.shared.asset(for: entry.character) else {
+                return nil
+            }
 
-        let consonantLetters = consonants.enumerated().map { index, item in
+            let strokes = asset.strokes.map { stroke in
+                let normalizedPoints = stroke.points.map {
+                    CGPoint(
+                        x: ($0.x - asset.viewBox.minX) / asset.viewBox.width,
+                        y: ($0.y - asset.viewBox.minY) / asset.viewBox.height
+                    )
+                }
+
+                let normalizedStartPoint = CGPoint(
+                    x: (stroke.startPoint.x - asset.viewBox.minX) / asset.viewBox.width,
+                    y: (stroke.startPoint.y - asset.viewBox.minY) / asset.viewBox.height
+                )
+
+                var normalizationTransform = CGAffineTransform.identity
+                normalizationTransform = normalizationTransform.translatedBy(x: -asset.viewBox.minX, y: -asset.viewBox.minY)
+                normalizationTransform = normalizationTransform.scaledBy(x: 1 / asset.viewBox.width, y: 1 / asset.viewBox.height)
+                let normalizedPath = stroke.path.copy(using: &normalizationTransform) ?? stroke.path
+
+                return GuideStroke(
+                    order: stroke.order,
+                    path: .vector(
+                        NormalizedVectorPath(
+                            signature: stroke.signature,
+                            path: normalizedPath,
+                            startPoint: normalizedStartPoint,
+                            lineCap: stroke.lineCap,
+                            lineJoin: stroke.lineJoin
+                        )
+                    ),
+                    directionHint: directionHint(for: normalizedPoints),
+                    lineWidth: stroke.lineWidth / min(asset.viewBox.width, asset.viewBox.height),
+                    startPoint: normalizedStartPoint,
+                    lineCap: stroke.lineCap,
+                    lineJoin: stroke.lineJoin
+                )
+            }
+
+            return Letter(
+                id: "\(entry.category)-\(index)",
+                symbol: entry.character,
+                romanization: romanization,
+                category: category,
+                orderIndex: index,
+                guideTemplate: .from(strokes)
+            )
+        }
+    }
+
+    static func buildFallbackLetters() -> [Letter] {
+        let consonantLetters = CanonicalLetterTemplates.consonants.enumerated().map { index, item in
             Letter(
                 id: "consonant-\(index)",
-                symbol: item.0,
-                romanization: item.1,
+                symbol: item.symbol,
+                romanization: item.romanization,
                 category: .consonant,
                 orderIndex: index,
-                guideTemplate: .from(item.2)
+                guideTemplate: .from(item.strokes)
             )
         }
 
-        let vowelLetters = vowels.enumerated().map { index, item in
+        let vowelLetters = CanonicalLetterTemplates.vowels.enumerated().map { index, item in
             Letter(
                 id: "vowel-\(index)",
-                symbol: item.0,
-                romanization: item.1,
+                symbol: item.symbol,
+                romanization: item.romanization,
                 category: .vowel,
                 orderIndex: index,
-                guideTemplate: .from(item.2)
+                guideTemplate: .from(item.strokes)
             )
         }
 
         return consonantLetters + vowelLetters
     }
 
-    static func stroke(
-        _ order: Int,
-        _ direction: GuideStrokeDirection,
-        width: CGFloat = 0.12,
-        _ points: CGPoint...
-    ) -> GuideStroke {
-        GuideStroke(
-            order: order,
-            path: .polyline(points),
-            directionHint: direction,
-            lineWidth: width
-        )
+    static func directionHint(for points: [CGPoint]) -> GuideStrokeDirection {
+        guard let first = points.first, let last = points.last else { return .right }
+        let deltaX = last.x - first.x
+        let deltaY = last.y - first.y
+
+        if hypot(deltaX, deltaY) < 0.02 {
+            return .clockwiseLoop
+        }
+
+        switch (deltaX, deltaY) {
+        case let (x, y) where abs(x) > abs(y) && x >= 0:
+            return .right
+        case let (x, y) where abs(x) > abs(y) && x < 0:
+            return .left
+        case let (x, y) where abs(y) > abs(x) && y >= 0:
+            return .down
+        case let (x, y) where abs(y) > abs(x) && y < 0:
+            return .up
+        case let (x, y) where x >= 0 && y >= 0:
+            return .downRight
+        case let (x, y) where x < 0 && y >= 0:
+            return .downLeft
+        case let (x, y) where x >= 0 && y < 0:
+            return .upRight
+        default:
+            return .upLeft
+        }
     }
 
-    static func loop(
-        _ order: Int,
-        _ rect: CGRect,
-        _ direction: GuideStrokeDirection,
-        width: CGFloat = 0.12
-    ) -> GuideStroke {
-        GuideStroke(
-            order: order,
-            path: .ellipse(rect: rect, startAngle: -.pi / 2, endAngle: (.pi * 3) / 2, clockwise: direction == .clockwiseLoop),
-            directionHint: direction,
-            lineWidth: width
-        )
-    }
-
-    static func p(_ x: CGFloat, _ y: CGFloat) -> CGPoint {
-        CGPoint(x: x, y: y)
-    }
-
-    static func rect(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
-        CGRect(x: x, y: y, width: width, height: height)
-    }
+    static let romanizationBySymbol: [String: String] = [
+        "ㄱ": "g/k",
+        "ㄴ": "n",
+        "ㄷ": "d/t",
+        "ㄹ": "r/l",
+        "ㅁ": "m",
+        "ㅂ": "b/p",
+        "ㅅ": "s",
+        "ㅇ": "ng",
+        "ㅈ": "j",
+        "ㅊ": "ch",
+        "ㅋ": "k",
+        "ㅌ": "t",
+        "ㅍ": "p",
+        "ㅎ": "h",
+        "ㅏ": "a",
+        "ㅑ": "ya",
+        "ㅓ": "eo",
+        "ㅕ": "yeo",
+        "ㅗ": "o",
+        "ㅛ": "yo",
+        "ㅜ": "u",
+        "ㅠ": "yu",
+        "ㅡ": "eu",
+        "ㅣ": "i"
+    ]
 }

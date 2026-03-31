@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-symbol="ㅗ" data-romanization="o">
+  <title>ㅗ</title>
+  <desc>Full glyph outline and ordered stroke paths for ㅗ.</desc>
+  <g id="glyph-outline">
+    <path d="M 86 69.898 L 86 63.677 L 53.065 63.677 L 53.065 30.102 L 46.295 30.102 L 46.295 63.677 L 14 63.677 L 14 69.898 Z" fill="#dfe9e3"/>
+  </g>
+  <g id="stroke-paths" fill="none" stroke="#4a916b">
+  <path id="stroke-1" data-order="1" data-direction="down" d="M 50 18 L 50 36" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-2" data-order="2" data-direction="right" d="M 24 44 L 76 44" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

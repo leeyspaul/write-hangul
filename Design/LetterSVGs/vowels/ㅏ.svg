@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-symbol="ㅏ" data-romanization="a">
+  <title>ㅏ</title>
+  <desc>Full glyph outline and ordered stroke paths for ㅏ.</desc>
+  <g id="glyph-outline">
+    <path d="M 44.857 14 L 38.669 14 L 38.669 86 L 44.857 86 L 44.857 49.54 L 61.331 49.54 L 61.331 43.854 L 44.857 43.854 Z" fill="#dfe9e3"/>
+  </g>
+  <g id="stroke-paths" fill="none" stroke="#4a916b">
+  <path id="stroke-1" data-order="1" data-direction="down" d="M 48 16 L 48 78" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-2" data-order="2" data-direction="right" d="M 48 44 L 70 44" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

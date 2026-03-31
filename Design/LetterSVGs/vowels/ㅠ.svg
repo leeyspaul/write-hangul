@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-symbol="ㅠ" data-romanization="yu">
+  <title>ㅠ</title>
+  <desc>Full glyph outline and ordered stroke paths for ㅠ.</desc>
+  <g id="glyph-outline">
+    <path d="M 65.873 70.264 L 65.873 35.682 L 86 35.682 L 86 29.736 L 14 29.736 L 14 35.682 L 34.036 35.682 L 34.036 70.264 L 40.897 70.264 L 40.897 35.682 L 59.103 35.682 L 59.103 70.264 Z" fill="#dfe9e3"/>
+  </g>
+  <g id="stroke-paths" fill="none" stroke="#4a916b">
+  <path id="stroke-1" data-order="1" data-direction="right" d="M 24 40 L 76 40" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-2" data-order="2" data-direction="down" d="M 38 48 L 38 66" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-3" data-order="3" data-direction="down" d="M 62 48 L 62 66" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

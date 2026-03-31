@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-symbol="ㅡ" data-romanization="eu">
+  <title>ㅡ</title>
+  <desc>Full glyph outline and ordered stroke paths for ㅡ.</desc>
+  <g id="glyph-outline">
+    <path d="M 86 52.973 L 86 47.027 L 14 47.027 L 14 52.973 Z" fill="#dfe9e3"/>
+  </g>
+  <g id="stroke-paths" fill="none" stroke="#4a916b">
+  <path id="stroke-1" data-order="1" data-direction="right" d="M 20 50 L 80 50" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

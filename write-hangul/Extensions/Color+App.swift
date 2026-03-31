@@ -9,6 +9,7 @@ extension Color {
     static let appCardBorder = Color.black.opacity(0.05)
     static let appGuide = Color(red: 0.45, green: 0.62, blue: 0.52).opacity(0.18)
     static let appGuideText = Color(red: 0.26, green: 0.34, blue: 0.30)
+    static let appPreviewStart = Color(red: 0.95, green: 0.63, blue: 0.28)
     static let appSuccessWash = Color(red: 0.89, green: 0.96, blue: 0.91)
     static let appWarning = Color(red: 0.75, green: 0.44, blue: 0.22)
     static let appWarningWash = Color(red: 0.98, green: 0.93, blue: 0.88)

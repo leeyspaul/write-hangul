@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-symbol="ㅓ" data-romanization="eo">
+  <title>ㅓ</title>
+  <desc>Full glyph outline and ordered stroke paths for ㅓ.</desc>
+  <g id="glyph-outline">
+    <path d="M 55.31 44.188 L 38.502 44.188 L 38.502 49.875 L 55.31 49.875 L 55.31 86 L 61.498 86 L 61.498 14 L 55.31 14 Z" fill="#dfe9e3"/>
+  </g>
+  <g id="stroke-paths" fill="none" stroke="#4a916b">
+  <path id="stroke-1" data-order="1" data-direction="down" d="M 52 16 L 52 78" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-2" data-order="2" data-direction="right" d="M 30 44 L 52 44" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

@@ -15,9 +15,7 @@ struct LetterCellView: View {
                 }
             }
 
-            Text(letter.symbol)
-                .font(.system(size: 42, weight: .medium, design: .rounded))
-                .foregroundStyle(Color.appInk)
+            LetterGlyphMarkView(symbol: letter.symbol, size: 46, color: .appInk, paddingRatio: 0.1)
 
             Text(letter.romanization)
                 .font(.system(size: 13, weight: .medium, design: .rounded))

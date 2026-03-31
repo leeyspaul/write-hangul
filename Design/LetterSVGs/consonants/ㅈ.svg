@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-symbol="ㅈ" data-romanization="j">
+  <title>ㅈ</title>
+  <desc>Full glyph outline and ordered stroke paths for ㅈ.</desc>
+  <g id="glyph-outline">
+    <path d="M 81.427 29.655 L 81.427 22.267 L 18.691 22.267 L 18.691 29.655 L 45.544 29.655 L 45.544 38.215 C 45.544 54.397 29.948 66.476 14 70.932 L 18.573 77.733 C 32.059 73.629 44.84 64.248 50.235 53.107 C 55.394 64.013 68.528 73.277 81.779 77.264 L 86 70.345 C 70.287 66.007 54.573 53.811 54.573 37.746 L 54.573 29.655 Z" fill="#dfe9e3"/>
+  </g>
+  <g id="stroke-paths" fill="none" stroke="#4a916b">
+  <path id="stroke-1" data-order="1" data-direction="right" d="M 30 24 L 70 24" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-2" data-order="2" data-direction="downRight" d="M 40 38 L 50 62" stroke-width="11" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-3" data-order="3" data-direction="upRight" d="M 60 38 L 50 62" stroke-width="11" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

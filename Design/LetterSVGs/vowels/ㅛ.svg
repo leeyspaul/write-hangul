@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-symbol="ㅛ" data-romanization="yo">
+  <title>ㅛ</title>
+  <desc>Full glyph outline and ordered stroke paths for ㅛ.</desc>
+  <g id="glyph-outline">
+    <path d="M 86 71.332 L 86 65.316 L 64.252 65.316 L 64.252 28.668 L 57.404 28.668 L 57.404 65.316 L 40.931 65.316 L 40.931 28.668 L 34.082 28.668 L 34.082 65.316 L 14 65.316 L 14 71.332 Z" fill="#dfe9e3"/>
+  </g>
+  <g id="stroke-paths" fill="none" stroke="#4a916b">
+  <path id="stroke-1" data-order="1" data-direction="down" d="M 38 18 L 38 34" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-2" data-order="2" data-direction="down" d="M 62 18 L 62 34" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-3" data-order="3" data-direction="right" d="M 24 46 L 76 46" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

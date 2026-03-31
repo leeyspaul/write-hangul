@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-symbol="ㅍ" data-romanization="p">
+  <title>ㅍ</title>
+  <desc>Full glyph outline and ordered stroke paths for ㅍ.</desc>
+  <g id="glyph-outline">
+    <path d="M 86 70.109 L 68.52 70.109 L 72.309 35.514 L 63.752 34.537 L 60.085 70.109 L 39.671 70.109 L 36.981 34.537 L 28.302 35.514 L 31.236 70.109 L 14 70.109 L 14 77.932 L 86 77.932 Z M 84.289 22.068 L 15.711 22.068 L 15.711 29.891 L 84.289 29.891 Z" fill="#dfe9e3"/>
+  </g>
+  <g id="stroke-paths" fill="none" stroke="#4a916b">
+  <path id="stroke-1" data-order="1" data-direction="right" d="M 28 22 L 72 22" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-2" data-order="2" data-direction="down" d="M 34 34 L 34 56" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-3" data-order="3" data-direction="down" d="M 62 34 L 62 56" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-4" data-order="4" data-direction="right" d="M 34 46 L 62 46" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-5" data-order="5" data-direction="right" d="M 30 68 L 66 68" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

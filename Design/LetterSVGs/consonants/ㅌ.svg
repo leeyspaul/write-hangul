@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-symbol="ㅌ" data-romanization="t">
+  <title>ㅌ</title>
+  <desc>Full glyph outline and ordered stroke paths for ㅌ.</desc>
+  <g id="glyph-outline">
+    <path d="M 86 71.404 L 23.818 71.404 L 23.818 53.862 L 84.298 53.862 L 84.298 44.96 L 23.818 44.96 L 23.818 28.596 L 85.476 28.596 L 85.476 19.825 L 14 19.825 L 14 80.175 L 86 80.175 Z" fill="#dfe9e3"/>
+  </g>
+  <g id="stroke-paths" fill="none" stroke="#4a916b">
+  <path id="stroke-1" data-order="1" data-direction="left" d="M 68 22 L 30 22 L 30 68 L 68 68" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path id="stroke-2" data-order="2" data-direction="right" d="M 36 44 L 64 44" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>
