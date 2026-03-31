@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1000 1000">
+  <title>ㅑ (ya)</title>
+  <desc>Hangul asset containing a full glyph outline and ordered stroke-path overlays. Glyph outline is derived from Noto Sans CJK KR. Stroke paths are schematic instructional paths and should be validated against the canonical handwriting guide before production use.</desc>
+  <rect x="0" y="0" width="1000" height="1000" rx="64" fill="#FBFAF6"/>
+  <g id="grid" opacity="0.08" stroke="#1A1A1A" stroke-width="2">
+    <line x1="180" y1="140" x2="180" y2="860"/>
+    <line x1="500" y1="140" x2="500" y2="860"/>
+    <line x1="820" y1="140" x2="820" y2="860"/>
+    <line x1="140" y1="180" x2="860" y2="180"/>
+    <line x1="140" y1="500" x2="860" y2="500"/>
+    <line x1="140" y1="820" x2="860" y2="820"/>
+  </g>
+  <g id="glyph-outline" transform="translate(145.664,757.635) scale(0.698198,-0.698198)">
+    <path d="M364 813V-75H447V236H651V306H447V483H651V552H447V813Z" fill="#DCEADF" stroke="#C1D9C5" stroke-width="10"/>
+  </g>
+  <g id="stroke-order-overlay">
+    <g id="stroke-labels"><g id="stroke-label-1"><circle cx="430" cy="220" r="22" fill="#2E8B57"/><text x="430" y="228" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#ffffff">1</text></g><g id="stroke-label-2"><circle cx="430" cy="380" r="22" fill="#2E8B57"/><text x="430" y="388" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#ffffff">2</text></g><g id="stroke-label-3"><circle cx="430" cy="560" r="22" fill="#2E8B57"/><text x="430" y="568" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#ffffff">3</text></g></g>
+    <g id="stroke-paths"><path id="stroke-1" d="M 430 220 L 430 780" fill="none" stroke="#2E8B57" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/><path id="stroke-2" d="M 430 380 L 700 380" fill="none" stroke="#2E8B57" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/><path id="stroke-3" d="M 430 560 L 700 560" fill="none" stroke="#2E8B57" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/></g>
+    <g id="start-dots"><circle cx="430" cy="220" r="10" fill="#1F6F46"/><circle cx="430" cy="380" r="10" fill="#1F6F46"/><circle cx="430" cy="560" r="10" fill="#1F6F46"/></g>
+  </g>
+  <g id="metadata">
+    <text x="500" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" fill="#1F2937">ㅑ</text>
+    <text x="500" y="940" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" fill="#4B5563">ya · vowel · 3 strokes</text>
+  </g>
+</svg>

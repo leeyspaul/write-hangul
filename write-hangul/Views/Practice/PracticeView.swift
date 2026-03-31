@@ -11,6 +11,9 @@ struct PracticeView: View {
     @State private var canvasSize: CGSize = .zero
     @State private var feedback: PracticeEvaluation?
     @State private var clearTrigger = 0
+    @State private var previewTrigger = 0
+    @State private var isPreviewPlaying = false
+    @State private var hasCompletedPreview = false
 
     private let scoringEngine = ScoringEngine()
 
@@ -32,9 +35,8 @@ struct PracticeView: View {
 
                     VStack(spacing: 18) {
                         ZStack {
-                            Text(letter.symbol)
-                                .font(.system(size: 230, weight: .regular, design: .rounded))
-                                .foregroundStyle(Color.appAccent.opacity(0.16))
+                            GlyphOutlineView(symbol: letter.symbol)
+                                .padding(28)
 
                             TracingCanvasView(
                                 drawing: $drawing,
@@ -45,6 +47,8 @@ struct PracticeView: View {
                         }
                         .frame(maxWidth: .infinity)
                         .aspectRatio(1, contentMode: .fit)
+
+                        compactPreviewSection(for: letter)
 
                         PracticeControlsView(
                             canGoPrevious: repository.adjacentLetter(to: letter, direction: .previous) != nil,
@@ -86,6 +90,8 @@ struct PracticeView: View {
     private func move(_ direction: NavigationDirection) {
         guard let adjacent = repository.adjacentLetter(to: currentLetter, direction: direction) else { return }
         currentLetterID = adjacent.id
+        resetPreview()
+        previewTrigger += 1
         clearCanvas()
     }
 
@@ -93,6 +99,85 @@ struct PracticeView: View {
         let evaluation = scoringEngine.evaluate(drawing: drawing, letter: currentLetter, canvasSize: canvasSize)
         progressStore.saveResult(letterID: currentLetter.id, score: evaluation.score)
         feedback = evaluation
+    }
+
+    private func replayPreview() {
+        resetPreview()
+        previewTrigger += 1
+    }
+
+    private func resetPreview() {
+        isPreviewPlaying = false
+        hasCompletedPreview = false
+    }
+
+    @ViewBuilder
+    private func compactPreviewSection(for letter: Letter) -> some View {
+        HStack(spacing: 14) {
+            StrokeOrderPreviewView(
+                symbol: letter.symbol,
+                template: letter.guideTemplate,
+                playbackTrigger: previewTrigger,
+                onPlaybackStarted: {
+                    isPreviewPlaying = true
+                    hasCompletedPreview = false
+                },
+                onPlaybackFinished: {
+                    isPreviewPlaying = false
+                    hasCompletedPreview = true
+                }
+            )
+            .padding(12)
+            .frame(width: 122, height: 122)
+            .background(Color.white.opacity(0.55), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Stroke order")
+                    .font(.system(size: 16, weight: .semibold, design: .rounded))
+                    .foregroundStyle(Color.appInk)
+
+                Text(previewStatusText)
+                    .font(.system(size: 13, weight: .medium, design: .rounded))
+                    .foregroundStyle(Color.appMuted)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                Button(isPreviewPlaying ? "Playing..." : "Replay", action: replayPreview)
+                    .buttonStyle(PreviewReplayButtonStyle())
+                    .disabled(isPreviewPlaying)
+            }
+
+            Spacer(minLength: 0)
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.appTile, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                .stroke(Color.appCardBorder, lineWidth: 1)
+        )
+    }
+
+    private var previewStatusText: String {
+        if isPreviewPlaying {
+            return "Follow the highlighted stroke and start point."
+        }
+
+        if hasCompletedPreview {
+            return "Preview finished. Replay it any time before tracing."
+        }
+
+        return "The preview will play each stroke in order."
+    }
+}
+
+private struct PreviewReplayButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.system(size: 14, weight: .semibold, design: .rounded))
+            .padding(.horizontal, 16)
+            .padding(.vertical, 10)
+            .background(Color.appTile.opacity(configuration.isPressed ? 0.72 : 1), in: Capsule())
+            .foregroundStyle(Color.appInk)
     }
 }
 

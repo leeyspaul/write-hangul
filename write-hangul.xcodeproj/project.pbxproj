@@ -9,6 +9,9 @@
 		A00000000000000000000003 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000003 /* Letter.swift */; };
 		A00000000000000000000004 /* PracticeProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000004 /* PracticeProgress.swift */; };
 		A00000000000000000000005 /* LetterGuideTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000005 /* LetterGuideTemplate.swift */; };
+		A0000000000000000000001A /* CanonicalLetterTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001A /* CanonicalLetterTemplates.swift */; };
+		A0000000000000000000001C /* HangulGuideAssetCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001C /* HangulGuideAssetCatalog.swift */; };
+		A0000000000000000000001D /* SVGPathParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001D /* SVGPathParser.swift */; };
 		A00000000000000000000006 /* LetterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000006 /* LetterRepository.swift */; };
 		A00000000000000000000007 /* ProgressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000007 /* ProgressStore.swift */; };
 		A00000000000000000000008 /* PracticeEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000008 /* PracticeEvaluation.swift */; };
@@ -22,7 +25,10 @@
 		A00000000000000000000010 /* FeedbackBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000010 /* FeedbackBannerView.swift */; };
 		A00000000000000000000011 /* TracingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000011 /* TracingCanvasView.swift */; };
 		A00000000000000000000012 /* GuideOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000012 /* GuideOverlayView.swift */; };
+		A0000000000000000000001B /* GlyphOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001B /* GlyphOutlineView.swift */; };
+		A00000000000000000000019 /* StrokeOrderPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000019 /* StrokeOrderPreviewView.swift */; };
 		A00000000000000000000013 /* Color+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000013 /* Color+App.swift */; };
+		A0000000000000000000001E /* HangulGuides in Resources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001E /* HangulGuides */; };
 		A00000000000000000000014 /* LetterRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000014 /* LetterRepositoryTests.swift */; };
 		A00000000000000000000015 /* ProgressStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000015 /* ProgressStoreTests.swift */; };
 		A00000000000000000000016 /* ScoringEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000016 /* ScoringEngineTests.swift */; };
@@ -44,6 +50,9 @@
 		A10000000000000000000003 /* Letter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		A10000000000000000000004 /* PracticeProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeProgress.swift; sourceTree = "<group>"; };
 		A10000000000000000000005 /* LetterGuideTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGuideTemplate.swift; sourceTree = "<group>"; };
+		A1000000000000000000001A /* CanonicalLetterTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanonicalLetterTemplates.swift; sourceTree = "<group>"; };
+		A1000000000000000000001C /* HangulGuideAssetCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangulGuideAssetCatalog.swift; sourceTree = "<group>"; };
+		A1000000000000000000001D /* SVGPathParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGPathParser.swift; sourceTree = "<group>"; };
 		A10000000000000000000006 /* LetterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterRepository.swift; sourceTree = "<group>"; };
 		A10000000000000000000007 /* ProgressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStore.swift; sourceTree = "<group>"; };
 		A10000000000000000000008 /* PracticeEvaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeEvaluation.swift; sourceTree = "<group>"; };
@@ -57,7 +66,10 @@
 		A10000000000000000000010 /* FeedbackBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackBannerView.swift; sourceTree = "<group>"; };
 		A10000000000000000000011 /* TracingCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingCanvasView.swift; sourceTree = "<group>"; };
 		A10000000000000000000012 /* GuideOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideOverlayView.swift; sourceTree = "<group>"; };
+		A1000000000000000000001B /* GlyphOutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlyphOutlineView.swift; sourceTree = "<group>"; };
+		A10000000000000000000019 /* StrokeOrderPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeOrderPreviewView.swift; sourceTree = "<group>"; };
 		A10000000000000000000013 /* Color+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+App.swift"; sourceTree = "<group>"; };
+		A1000000000000000000001E /* HangulGuides */ = {isa = PBXFileReference; lastKnownFileType = folder; path = write-hangul/Assets/HangulGuides; sourceTree = SOURCE_ROOT; };
 		A10000000000000000000014 /* LetterRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterRepositoryTests.swift; sourceTree = "<group>"; };
 		A10000000000000000000015 /* ProgressStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStoreTests.swift; sourceTree = "<group>"; };
 		A10000000000000000000016 /* ScoringEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringEngineTests.swift; sourceTree = "<group>"; };
@@ -69,6 +81,17 @@
 		A60000000000000000000001 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
 		A60000000000000000000002 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A60000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0000000000000000000001E /* HangulGuides in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXGroup section */
 		A20000000000000000000001 = {
@@ -90,6 +113,7 @@
 				A20000000000000000000009 /* Scoring */,
 				A2000000000000000000000A /* Views */,
 				A2000000000000000000000B /* Extensions */,
+				A1000000000000000000001E /* HangulGuides */,
 			);
 			path = "write-hangul";
 			sourceTree = "<group>";
@@ -135,6 +159,9 @@
 			isa = PBXGroup;
 			children = (
 				A10000000000000000000005 /* LetterGuideTemplate.swift */,
+				A1000000000000000000001A /* CanonicalLetterTemplates.swift */,
+				A1000000000000000000001C /* HangulGuideAssetCatalog.swift */,
+				A1000000000000000000001D /* SVGPathParser.swift */,
 				A10000000000000000000006 /* LetterRepository.swift */,
 			);
 			path = Data;
@@ -201,6 +228,8 @@
 			children = (
 				A10000000000000000000011 /* TracingCanvasView.swift */,
 				A10000000000000000000012 /* GuideOverlayView.swift */,
+				A1000000000000000000001B /* GlyphOutlineView.swift */,
+				A10000000000000000000019 /* StrokeOrderPreviewView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -214,6 +243,7 @@
 			buildPhases = (
 				A80000000000000000000001 /* Sources */,
 				A60000000000000000000001 /* Frameworks */,
+				A60000000000000000000003 /* Resources */,
 			);
 			buildRules = ();
 			dependencies = ();
@@ -286,6 +316,9 @@
 				A00000000000000000000003 /* Letter.swift in Sources */,
 				A00000000000000000000004 /* PracticeProgress.swift in Sources */,
 				A00000000000000000000005 /* LetterGuideTemplate.swift in Sources */,
+				A0000000000000000000001A /* CanonicalLetterTemplates.swift in Sources */,
+				A0000000000000000000001C /* HangulGuideAssetCatalog.swift in Sources */,
+				A0000000000000000000001D /* SVGPathParser.swift in Sources */,
 				A00000000000000000000006 /* LetterRepository.swift in Sources */,
 				A00000000000000000000007 /* ProgressStore.swift in Sources */,
 				A00000000000000000000008 /* PracticeEvaluation.swift in Sources */,
@@ -299,6 +332,8 @@
 				A00000000000000000000010 /* FeedbackBannerView.swift in Sources */,
 				A00000000000000000000011 /* TracingCanvasView.swift in Sources */,
 				A00000000000000000000012 /* GuideOverlayView.swift in Sources */,
+				A0000000000000000000001B /* GlyphOutlineView.swift in Sources */,
+				A00000000000000000000019 /* StrokeOrderPreviewView.swift in Sources */,
 				A00000000000000000000013 /* Color+App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

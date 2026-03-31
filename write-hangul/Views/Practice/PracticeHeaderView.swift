@@ -10,10 +10,8 @@ struct PracticeHeaderView: View {
                 .font(.system(size: 14, weight: .semibold, design: .rounded))
                 .foregroundStyle(Color.appMuted)
 
-            HStack(alignment: .lastTextBaseline) {
-                Text(letter.symbol)
-                    .font(.system(size: 64, weight: .medium, design: .rounded))
-                    .foregroundStyle(Color.appInk)
+            HStack(alignment: .center, spacing: 10) {
+                LetterGlyphMarkView(symbol: letter.symbol, size: 68, color: .appInk, paddingRatio: 0.08)
 
                 Text(letter.romanization)
                     .font(.system(size: 22, weight: .medium, design: .rounded))

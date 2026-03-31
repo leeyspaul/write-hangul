@@ -13,6 +13,7 @@ struct ScoringEngine {
             return PracticeEvaluation(score: 0.0, passed: false, message: "Try again")
         }
 
+        let visibleGuideBounds = glyphGuideBounds(for: letter) ?? letter.guideTemplate.bounds
         let normalizedDrawing = CGRect(
             x: drawingBounds.minX / canvasSize.width,
             y: drawingBounds.minY / canvasSize.height,
@@ -20,21 +21,20 @@ struct ScoringEngine {
             height: drawingBounds.height / canvasSize.height
         )
 
-        let templateBounds = letter.guideTemplate.bounds
-        let overlapMetrics = overlapMetrics(drawing: drawing, template: letter.guideTemplate, canvasSize: canvasSize)
-        let templateCoverage = normalizedDrawing.intersection(templateBounds).area / max(templateBounds.area, 0.0001)
+        let overlapMetrics = overlapMetrics(drawing: drawing, letter: letter, canvasSize: canvasSize)
+        let templateCoverage = normalizedDrawing.intersection(visibleGuideBounds).area / max(visibleGuideBounds.area, 0.0001)
         let shapeScore = ellipseShapeScore(drawing: drawing, template: letter.guideTemplate, canvasSize: canvasSize) ?? overlapMetrics.overlapRatio
 
         let overlapRatio = overlapMetrics.overlapRatio
 
         let drawingAspect = normalizedDrawing.width / max(normalizedDrawing.height, 0.0001)
-        let templateAspect = templateBounds.width / max(templateBounds.height, 0.0001)
+        let templateAspect = visibleGuideBounds.width / max(visibleGuideBounds.height, 0.0001)
         let aspectScore = max(0, 1 - min(abs(drawingAspect - templateAspect), 1))
 
-        let centerDistance = normalizedDrawing.center.distance(to: templateBounds.center)
+        let centerDistance = normalizedDrawing.center.distance(to: visibleGuideBounds.center)
         let centerScore = max(0, 1 - (centerDistance * 1.8))
 
-        let sizeScore = normalizedDrawing.area < templateBounds.area * 0.18 ? 0.25 : 1.0
+        let sizeScore = normalizedDrawing.area < visibleGuideBounds.area * 0.18 ? 0.25 : 1.0
         let rawScore = (overlapRatio * 0.34) + (templateCoverage * 0.28) + (aspectScore * 0.15) + (centerScore * 0.15) + (shapeScore * 0.08)
         let finalScore = max(0, min(rawScore * sizeScore, 1))
         let passed = finalScore >= Self.passThreshold
@@ -46,8 +46,8 @@ struct ScoringEngine {
         )
     }
 
-    private func overlapMetrics(drawing: PKDrawing, template: LetterGuideTemplate, canvasSize: CGSize) -> OverlapMetrics {
-        let templateMask = templateMask(for: template, canvasSize: scoringGridSize)
+    private func overlapMetrics(drawing: PKDrawing, letter: Letter, canvasSize: CGSize) -> OverlapMetrics {
+        let templateMask = templateMask(for: letter, canvasSize: scoringGridSize)
         let drawingMask = drawingMask(for: drawing, canvasSize: canvasSize, outputSize: scoringGridSize)
 
         guard !templateMask.isEmpty, templateMask.count == drawingMask.count else {
@@ -72,15 +72,24 @@ struct ScoringEngine {
         return OverlapMetrics(overlapRatio: CGFloat(overlapPixels) / max(CGFloat(drawingPixels), 1))
     }
 
-    private func templateMask(for template: LetterGuideTemplate, canvasSize: CGSize) -> [UInt8] {
+    private func templateMask(for letter: Letter, canvasSize: CGSize) -> [UInt8] {
         rasterizedMask(size: canvasSize) { context in
             context.setFillColor(UIColor.white.cgColor)
 
-            for path in template.strokedPaths(in: canvasSize) {
-                context.addPath(path)
+            if let glyphPath = GlyphOutline.path(for: letter.symbol, in: canvasSize, paddingRatio: 0.18) {
+                context.addPath(glyphPath)
                 context.fillPath()
+            } else {
+                for path in letter.guideTemplate.strokedPaths(in: canvasSize) {
+                    context.addPath(path)
+                    context.fillPath()
+                }
             }
         }
+    }
+
+    private func glyphGuideBounds(for letter: Letter) -> CGRect? {
+        GlyphOutline.path(for: letter.symbol, in: CGSize(width: 1, height: 1), paddingRatio: 0.18)?.boundingBoxOfPath
     }
 
     private func drawingMask(for drawing: PKDrawing, canvasSize: CGSize, outputSize: CGSize) -> [UInt8] {

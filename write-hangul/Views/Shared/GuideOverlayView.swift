@@ -7,8 +7,8 @@ struct GuideOverlayView: View {
         GeometryReader { geometry in
             ZStack {
                 ForEach(template.strokes) { stroke in
-                    Path(stroke.strokedPath(in: geometry.size))
-                        .fill(Color.appGuide)
+                    Path(stroke.path.cgPath(in: geometry.size))
+                        .stroke(Color.appGuide, style: stroke.strokeStyle(in: geometry.size))
                 }
             }
         }
